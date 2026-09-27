@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "gender": "female",
+    "name": {
+      "title": "Mrs",
+      "first": "Emma",
+      "last": "Lampi"
+    },
+    "location": {
+      "street": {
+        "number": 2304,
+        "name": "Siilitie"
+      },
+      "city": "Hausjärvi",
+      "state": "Uusimaa",
+      "country": "Finland",
+      "postcode": 98555
+    },
+    "email": "emma.lampi@example.com",
+    "dob": {
+      "date": "2001-03-08T01:39:19.084Z",
+      "age": 25
+    },
+    "phone": "02-689-410",
+    "cell": "043-730-12-94",
+    "picture": "https://randomuser.me/api/portraits/women/87.jpg",
+    "hobbies": ["Дизайн", "Фотографія", "Пожорожування"],
+    "details": "Спеціаліст з веб-дизайну та візуального контенту з Фінляндії."
+  }
+]
