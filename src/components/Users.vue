@@ -1,18 +1,22 @@
 <template>
-  <div class="card">
-
+  <div 
+    class="card" 
+    :class="{
+      'minor': user.dob.age < 18,
+      'young': user.dob.age >= 18 && user.dob.age <= 30,
+      'adult': user.dob.age >= 31 && user.dob.age <= 50,
+      'senior': user.dob.age > 50
+    }"
+  >
     <div class="left-col">
       <img :src="user.picture" alt="Avatar" class="avatar" />
       <h2>{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</h2>
-      
-      <div class="badge" :class="getAgeCategoryClass(user.dob.age)">
-        <span v-if="user.dob.age < 18">Неповнолітній</span>
-        <span v-else-if="user.dob.age <= 35">Молодь</span>
-        <span v-else-if="user.dob.age <= 60">Дорослий</span>
-        <span v-else>Похилий вік</span>
-      </div>
 
-      <p>♀ {{ user.gender }} | 🎂 {{ user.dob.age }} років</p>
+      <p v-if="user.dob.age > 18">
+        🎂 Вік: {{ user.dob.age }} років
+      </p>
+
+      <p>♀ {{ user.gender }}</p>
       <p>📍 {{ getLocationString(user.location) }}</p>
       <p>✉️ {{ user.email }}</p>
       <p>📞 {{ user.phone }}</p>
@@ -25,7 +29,9 @@
         <button @click="showDetails = !showDetails">
           {{ showDetails ? 'Сховати' : 'Показати' }}
         </button>
-        <p v-show="showDetails">{{ user.details || 'Немає опису' }}</p>
+        <p v-show="showDetails">
+          {{ user.details || 'Інформація відсутня' }}
+        </p>
       </div>
 
       <div class="section">
@@ -39,7 +45,7 @@
             <td>Gender:</td>
             <td>{{ user.gender }}</td>
           </tr>
-          <tr>
+          <tr v-if="user.dob.age > 18">
             <td>Date of birth:</td>
             <td>{{ formatDate(user.dob.date) }} (age {{ user.dob.age }})</td>
           </tr>
@@ -69,13 +75,13 @@
         </table>
       </div>
 
-      <div class="section" v-if="user.hobbies">
+      <div class="section" v-if="user.hobbies && user.hobbies.length">
         <h3>Hobbies</h3>
-        <div class="hobbies">
-          <span v-for="(hobby, i) in user.hobbies" :key="i" class="hobby-tag">
+        <ul class="hobbies-list">
+          <li v-for="(hobby, index) in user.hobbies" :key="index">
             {{ hobby }}
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -89,13 +95,6 @@ import usersData from '../data/users.json'
 const users = ref<User[]>(usersData as User[])
 const user = ref<User>(users.value[0])
 const showDetails = ref<boolean>(true)
-
-const getAgeCategoryClass = (age: number) => {
-  if (age < 18) return 'cat-minor'
-  if (age <= 35) return 'cat-youth'
-  if (age <= 60) return 'cat-adult'
-  return 'cat-senior'
-}
 
 const formatDate = (dateStr: string) => {
   if (!dateStr) return ''
@@ -117,11 +116,30 @@ const getLocationString = (loc: any) => {
   width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  background: #fff;
   font-family: sans-serif;
   color: #333;
+  border: 3px solid #ccc; 
+}
+
+.minor {
+  border-color: #ffc107;
+  background-color: #fffdf5;
+}
+
+.young {
+  border-color: #28a745;
+  background-color: #f6fff8;
+}
+
+.adult {
+  border-color: #17a2b8;
+  background-color: #f0fbff;
+}
+
+.senior {
+  border-color: #6c757d;
+  background-color: #f8f9fa;
 }
 
 .left-col {
@@ -138,18 +156,6 @@ const getLocationString = (loc: any) => {
   width: 100%;
   border-radius: 8px;
 }
-
-.badge {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-.cat-minor { background: #fff3cd; }
-.cat-youth { background: #d4edda; }
-.cat-adult { background: #cce5ff; }
-.cat-senior { background: #e2e3e5; }
 
 .section {
   margin-bottom: 15px;
@@ -177,17 +183,13 @@ td:first-child {
   width: 120px;
 }
 
-.hobbies {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.hobbies-list {
+  margin: 0;
+  padding-left: 20px;
 }
 
-.hobby-tag {
-  background: #eef2ff;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 13px;
+.hobbies-list li {
+  margin-bottom: 4px;
 }
 
 button {
