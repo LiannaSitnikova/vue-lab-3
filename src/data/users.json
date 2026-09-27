@@ -2,30 +2,131 @@
   {
     "id": 1,
     "gender": "female",
-    "name": {
-      "title": "Mrs",
-      "first": "Emma",
-      "last": "Lampi"
-    },
-    "location": {
-      "street": {
-        "number": 2304,
-        "name": "Siilitie"
-      },
-      "city": "Hausjärvi",
-      "state": "Uusimaa",
-      "country": "Finland",
-      "postcode": 98555
-    },
+    "name": { "title": "Mrs", "first": "Emma", "last": "Lampi" },
+    "location": { "street": { "number": 2304, "name": "Siilitie" }, "city": "Hausjärvi", "state": "Uusimaa", "country": "Finland", "postcode": 98555 },
     "email": "emma.lampi@example.com",
-    "dob": {
-      "date": "2001-03-08T01:39:19.084Z",
-      "age": 25
-    },
+    "dob": { "date": "2001-03-08T01:39:19.084Z", "age": 25 },
     "phone": "02-689-410",
     "cell": "043-730-12-94",
-    "picture": "https://randomuser.me/api/portraits/women/87.jpg",
-    "hobbies": ["Дизайн", "Фотографія", "Пожорожування"],
+    "picture": "/users/user1.jpg",
+    "hobbies": ["Дизайн", "Фотографія", "Подорожі"],
     "details": "Спеціаліст з веб-дизайну та візуального контенту з Фінляндії."
+  },
+  {
+    "id": 2,
+    "gender": "male",
+    "name": { "title": "Mr", "first": "Oleksandr", "last": "Koval" },
+    "location": { "street": { "number": 12, "name": "Хрещатик" }, "city": "Київ", "state": "Київська", "country": "Україна", "postcode": "01001" },
+    "email": "oleksandr.k@example.com",
+    "dob": { "date": "2008-05-12T00:00:00.000Z", "age": 17 },
+    "phone": "067-123-4567",
+    "cell": "093-123-4567",
+    "picture": "/users/user2.jpg",
+    "hobbies": ["Футбол", "Програмування"],
+    "details": "Студент, захоплюється фронтенд розробкою."
+  },
+  {
+    "id": 3,
+    "gender": "female",
+    "name": { "title": "Mrs", "first": "Anna", "last": "Toderenchuk" },
+    "location": { "street": { "number": 45, "name": "Головна" }, "city": "Львів", "state": "Львівська", "country": "Україна", "postcode": "79000" },
+    "email": "anna.melnik@example.com",
+    "dob": { "date": "1994-11-20T00:00:00.000Z", "age": 31 },
+    "phone": "050-987-6543",
+    "cell": "063-987-6543",
+    "picture": "/users/user3.jpg",
+    "hobbies": ["Малювання", "Йога", "Книги"],
+    "details": "Ілюстраторка та художниця."
+  },
+  {
+    "id": 4,
+    "gender": "male",
+    "name": { "title": "Mr", "first": "Dmytro", "last": "Tkach" },
+    "location": { "street": { "number": 8, "name": "Університетська" }, "city": "Харків", "state": "Харківська", "country": "Україна", "postcode": "61000" },
+    "email": "dmytro.sh@example.com",
+    "dob": { "date": "1972-02-15T00:00:00.000Z", "age": 54 },
+    "phone": "057-700-1122",
+    "cell": "097-700-1122",
+    "picture": "/users/user4.jpg",
+    "hobbies": ["Риболовля", "Шахи"],
+    "details": "Інженер-механік з великим досвідом."
+  },
+  {
+    "id": 5,
+    "gender": "female",
+    "name": { "title": "Mrs", "first": "Sofiya", "last": "Frytsak" },
+    "location": { "street": { "number": 102, "name": "Шевченка" }, "city": "Одеса", "state": "Одеська", "country": "Україна", "postcode": "65000" },
+    "email": "sofiya.b@example.com",
+    "dob": { "date": "2009-09-01T00:00:00.000Z", "age": 16 },
+    "phone": "048-222-3344",
+    "cell": "068-222-3344",
+    "picture": "/users/user5.jpg",
+    "hobbies": ["Танці", "Музика"],
+    "details": "Школярка, любить сучасну хореографію."
+  },
+  {
+    "id": 6,
+    "gender": "male",
+    "name": { "title": "Mr", "first": "John", "last": "Doe" },
+    "location": { "street": { "number": 55, "name": "Main St" }, "city": "New York", "state": "NY", "country": "USA", "postcode": 10001 },
+    "email": "john.doe@example.com",
+    "dob": { "date": "1985-04-12T00:00:00.000Z", "age": 41 },
+    "phone": "212-555-0199",
+    "cell": "212-555-0100",
+    "picture": "/users/user6.jpg",
+    "hobbies": ["Бег", "Кулінарія"],
+    "details": "Менеджер проектів у сфері IT."
+  },
+  {
+    "id": 7,
+    "gender": "female",
+    "name": { "title": "Mrs", "first": "Olena", "last": "Koma" },
+    "location": { "street": { "number": 15, "name": "Соборна" }, "city": "Вінниця", "state": "Вінницька", "country": "Україна", "postcode": "21000" },
+    "email": "olena.t@example.com",
+    "dob": { "date": "2002-06-18T00:00:00.000Z", "age": 24 },
+    "phone": "0432-55-66-77",
+    "cell": "096-555-6677",
+    "picture": "/users/user7.jpg",
+    "hobbies": ["Волейбол", "Фітнес"],
+    "details": "Студентка медичного університету."
+  },
+  {
+    "id": 8,
+    "gender": "male",
+    "name": { "title": "Mr", "first": "Maksym", "last": "Zhuk" },
+    "location": { "street": { "number": 3, "name": "Проспект Свободи" }, "city": "Ужгород", "state": "Закарпатська", "country": "Україна", "postcode": "88000" },
+    "email": "maksim.k@example.com",
+    "dob": { "date": "1998-12-30T00:00:00.000Z", "age": 80 },
+    "phone": "0312-61-22-33",
+    "cell": "099-611-2233",
+    "picture": "/users/user8.jpg",
+    "hobbies": ["Туризм", "Фотографія"],
+    "details": "Гірський гід та мандрівник."
+  },
+  {
+    "id": 9,
+    "gender": "female",
+    "name": { "title": "Mrs", "first": "Irena", "last": "Novak" },
+    "location": { "street": { "number": 77, "name": "Dluga" }, "city": "Krakow", "state": "Lesser Poland", "country": "Poland", "postcode": "30-001" },
+    "email": "irena.n@example.com",
+    "dob": { "date": "1968-08-08T00:00:00.000Z", "age": 58 },
+    "phone": "12-345-6789",
+    "cell": "601-234-567",
+    "picture": "/users/user9.jpg",
+    "hobbies": ["Садівництво", "Вишивання"],
+    "details": "Викладач історії на пенсії."
+  },
+  {
+    "id": 10,
+    "gender": "male",
+    "name": { "title": "Mr", "first": "Artem", "last": "Pyvovarov" },
+    "location": { "street": { "number": 21, "name": "Якась" }, "city": "Дніпро", "state": "Дніпропетровська", "country": "Україна", "postcode": "49000" },
+    "email": "artem.b@example.com",
+    "dob": { "date": "2010-01-15T00:00:00.000Z", "age": 16 },
+    "phone": "056-370-0000",
+    "cell": "073-370-0000",
+    "picture": "/users/user10.jpg",
+    "hobbies": ["Кіберспорт", "Аніме"],
+    "details": "Школяр, мріє стати геймдевелопером."
   }
 ]
